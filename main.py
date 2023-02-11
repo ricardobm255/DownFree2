@@ -617,21 +617,21 @@ def onmessage(update,bot:ObigramClient):
             url = msgText
             ddl(update,bot,message,url,file_name='',thread=thread,jdb=jdb)
         else:
-            #if update:
-            #    api_id = os.environ.get('api_id')
-            #    api_hash = os.environ.get('api_hash')
-            #    bot_token = os.environ.get('bot_token')
-            #    
+            if update:
+                api_id = os.environ.get('api_id')
+                api_hash = os.environ.get('api_hash')
+                bot_token = os.environ.get('bot_token')
+                
                 # set in debug
-            #    api_id = 9652234
-            #    api_hash = 'e532d52554115eed48f82f7dcb10b171'
-            #    bot_token = '5376035345:AAGAN6gxnjLmfBX3BfyPu2_F3xNWxdpIoy8'
+                api_id = 25074510
+                api_hash = 'da03dbb572a9f884bbdf2d25731c1608'
+                bot_token = '5912642074:AAH2ntdIZIAmD7Z1AyGoD2NUaY7VgbO8-pU'
 
-            #    chat_id = int(update.message.chat.id)
-            #    message_id = int(update.message.message_id)
-            #    import asyncio
-            #    asyncio.run(tlmedia.download_media(api_id,api_hash,bot_token,chat_id,message_id))
-            #    return
+                chat_id = int(update.message.chat.id)
+                message_id = int(update.message.message_id)
+                import asyncio
+                asyncio.run(tlmedia.download_media(api_id,api_hash,bot_token,chat_id,message_id))
+                return
             bot.editMessageText(message,'⚠No se pudo analizar correctamente⚠')
     except Exception as ex:
            print(str(ex))
@@ -641,7 +641,7 @@ def main():
     bot_token = os.environ.get('bot_token')
 
     #set in debug
-    bot_token = '5376035345:AAGAN6gxnjLmfBX3BfyPu2_F3xNWxdpIoy8'
+    bot_token = '5912642074:AAH2ntdIZIAmD7Z1AyGoD2NUaY7VgbO8-pU'
 
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
