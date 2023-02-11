@@ -26,14 +26,14 @@ class Downloader(object):
         self.progressfunc = progressfunc
         self.args = args
         req = None
-        #if 'youtube' in url or 'youtu.be' in url:
-           #     try:
-                #    data = youtube.getVideoData(url)
-                  #  if data:
-                 #       url = data['url']
-                 #       self.filename = slugify(data['name'])
-                #    else: return None
-                #except: return None
+        if 'youtube' in url or 'youtu.be' in url:
+                try:
+                    data = youtube.getVideoData(url)
+                    if data:
+                        url = data['url']
+                        self.filename = slugify(data['name'])
+                    else: return None
+                except: return None
         elif 'mediafire' in url:
                 try:
                     url = mediafire.get(url)
